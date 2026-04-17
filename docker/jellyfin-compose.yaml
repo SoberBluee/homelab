@@ -1,0 +1,18 @@
+version: '1'
+
+services: 
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    ports: 
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - /opt/docker-configs/jellyfin/config:/config
+      - /opt/docker-configs/jellyfin/cache:/cache
+      - /media/movies:/movies:rshared
+      - /media/music:/music:ro
+      - /media/shows:/shows:ro
+    restart: 'unless-stopped'
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://movie-server.com

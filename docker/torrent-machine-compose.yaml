@@ -1,0 +1,85 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    cap_add: [NET_ADMIN]
+    devices: [/dev/net/tun:/dev/net/tun]
+    environment:
+      - VPN_SERVICE_PROVIDER=protonvpn
+      - VPN_TYPE=wireguard
+      - FREE_ONLY=off
+      - SERVER_COUNTRIES=Netherlands
+      - WIREGUARD_PRIVATE_KEY=**********************
+      - WIREGUARD_ADDRESSES=10.2.0.2/32
+      - VPN_PORT_FORWARDING=on
+      - DOT=off
+      - DNS_PLAINTEXT_ADDRESS=1.1.1.1
+      - NETWORK=192.168.1.0/24
+      - EXTRA_SUBNETS=192.168.1.0/24 
+      - DNS_ADDRESS=127.0.0.11
+    ports:
+      - 8080:8080 # qBittorrent
+      - 7877:7878 # Radarr
+      - 5054:5055 # Overseerr
+      - 9695:9696 # Prowlarr
+      - 8191:8191 # FlareSolverr
+    restart: unless-stopped
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: "service:gluetun"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./qbittorrent_config:/config
+      - /data/downloads:/downloads
+      - /data/movies:/completed_movies:rw
+    depends_on: [gluetun]
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    network_mode: "service:gluetun"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./radarr_config:/config
+      - /data:/data
+    restart: unless-stopped
+    depends_on: [gluetun]
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    network_mode: "service:gluetun"
+    volumes:
+      - ./prowlarr_config:/config
+    restart: unless-stopped
+    depends_on: [gluetun]
+
+  overseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: overseerr
+    network_mode: "service:gluetun"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./overseerr_config:/app/config
+    restart: unless-stopped
+    depends_on: [gluetun]
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    network_mode: "service:gluetun"
+    environment:
+      - LOG_LEVEL=info
+      - TZ=Europe/London
+    restart: unless-stopped 
+    depends_on: [gluetun]
