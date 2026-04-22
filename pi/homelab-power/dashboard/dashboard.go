@@ -1,19 +1,21 @@
 package main
 
 import (
+	"bytes"
 	"embed"
 	"fmt"
 	"html/template"
-	"net/http"
 	"net"
+	"net/http"
 	"os"
-	"bytes"
+
 	"github.com/da-rod/wakeonlan"
+	"github.com/joho/godotenv"
 	"golang.org/x/crypto/ssh"
-    "github.com/joho/godotenv" 
 )
 
 // This tells Go to include these files in the final binary
+//
 //go:embed dashboard.html dashboard.css
 var content embed.FS
 
@@ -22,19 +24,23 @@ type PageData struct {
 }
 
 // runs the ssh shutdown command
-func runSSHShutdown() { 
+func runSSHShutdown() {
 	// load the .env file
 	err := godotenv.Load()
 
 	if err != nil {
 		fmt.Println("Error loading .env file:", err)
-		return
 	}
 
 	sshUser := os.Getenv("SSH_USER")
 	sshPassword := os.Getenv("SSH_PASSWORD")
 	sshHost := os.Getenv("SSH_HOST")
 	sshPort := os.Getenv("SSH_PORT")
+
+	if sshUser == "" || sshPassword == "" || sshHost == "" || sshPort == "" {
+		fmt.Println("Error: SSH_USER, SSH_PASSWORD, SSH_HOST, or SSH_PORT environment variables are empty")
+		fmt.Println(sshUser, sshPassword, sshHost, sshPort)
+	}
 
 	config := &ssh.ClientConfig{
 		User: sshUser,
@@ -63,7 +69,7 @@ func runSSHShutdown() {
 	session.Stdout = &stdout
 
 	command := "shutdown -h now"
-	
+
 	// Run the command
 	err = session.Run(command)
 	if err != nil {
@@ -77,37 +83,37 @@ func main() {
 	// Serve the CSS file
 	http.Handle("/static/", http.FileServer(http.FS(content)))
 
-	http.HandleFunc("/shutdown", func(w http.ResponseWriter, r *http.Request){ 
+	http.HandleFunc("/shutdown", func(w http.ResponseWriter, r *http.Request) {
 		runSSHShutdown()
-		http.Redirect(w, r, "/", http.StatusSeeOther);
-		fmt.Println("Shutdown command sent");
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+		fmt.Println("Shutdown command sent")
 	})
 
-	// load the .env file
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Println("Error loading .env file:", err)
-		return
-	}
+	// Attempt to load .env, but don't check for 'err'
+	_ = godotenv.Load()
 
+	// Now pull your MAC address
 	targetMAC := os.Getenv("MAC_ADDRESS")
+	if targetMAC == "" {
+		fmt.Println("Warning: MAC_ADDRESS environment variable is empty!")
+	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		status := ""
-		// check if its a post request 
+		// check if its a post request
 		if r.Method == http.MethodPost {
-			fmt.Println("Sending magic packet");
+			fmt.Println("Sending magic packet")
 			// create a new packet with WOL giving the target mac address
 			mp, err := wakeonlan.NewMagicPacket(targetMAC)
-			fmt.Println("Magic packet created");
+			fmt.Println("Magic packet created")
 			// nil means - representation of zero value of the type
 			// so below means if no errors, send packages
 			if err == nil {
-				fmt.Println("Sending magic packet");
+				fmt.Println("Sending magic packet")
 				mp.Send()
-				fmt.Println("Magic packet sent");
+				fmt.Println("Magic packet sent")
 				status = "Magic Packet Sent!"
-			} else {	
+			} else {
 				status = "Error: " + err.Error()
 			}
 		}
