@@ -99,39 +99,17 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		status := ""
-		// check if its a post request
-		if r.Method == http.MethodPost {
-			fmt.Println("Sending magic packet")
-			// create a new packet with WOL giving the target mac address
-			mp, err := wakeonlan.NewMagicPacket(targetMAC)
-			fmt.Println("Magic packet created")
-			// nil means - representation of zero value of the type
-			// so below means if no errors, send packages
-			if err == nil {
-				fmt.Println("Sending magic packet")
-				mp.Send()
-				fmt.Println("Magic packet sent")
-				status = "Magic Packet Sent!"
-			} else {
-				status = "Error: " + err.Error()
-			}
-		}
+		
+		command := "etherwake"
+		arg1 := "-i"
+		arg2 := "wlan0"
+		arg3 := targetMAC
 
-		// FIX: Removed the stray backtick from the filename
-		tmpl, err := template.ParseFS(content, "dashboard.html")
+		cmd := exec.Command(command, arg1, arg2, arg3)
+		err := cmd.Run()
 		if err != nil {
-			fmt.Println("Error parsing template:", err)
-			http.Error(w, "Template not found", 500)
-			return
+			fmt.Println("Error running command:", err)
 		}
-
-		// Execute and check for errors
-		err = tmpl.Execute(w, PageData{Status: status})
-		if err != nil {
-			fmt.Println("Error executing template:", err)
-		}
-		fmt.Println("Response sent")
 	})
 
 	// listen on all interfaces for port 8080
