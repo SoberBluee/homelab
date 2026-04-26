@@ -7,7 +7,8 @@ import (
 	"html/template"
 	"net"
 	"net/http"
-	"os"
+	"os",
+	"os/exec"
 
 	"github.com/da-rod/wakeonlan"
 	"github.com/joho/godotenv"
@@ -90,7 +91,7 @@ func main() {
 	})
 
 	
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/turn-on", func(w http.ResponseWriter, r *http.Request) {
 		// Attempt to load .env, but don't check for 'err'
 		_ = godotenv.Load()
 	
@@ -100,19 +101,19 @@ func main() {
 			fmt.Println("Warning: MAC_ADDRESS environment variable is empty!")
 		}
 
-		fmt.Println('Sending magic packet to', targetMAC)
+		fmt.Println("Sending magic packet to", targetMAC)
 		
 		command := "etherwake"
 		arg1 := "-i"
 		arg2 := "wlan0"
 		arg3 := targetMAC
 
-		fmt.Println('Running command:', command, arg1, arg2, arg3)
+		fmt.Println("Running command:", command, arg1, arg2, arg3)
 
 		cmd := exec.Command(command, arg1, arg2, arg3)
 		err := cmd.Run()
 
-		fmt.Println('Command ran successfully')
+		fmt.Println("Command ran successfully")
 
 		if err != nil {
 			fmt.Println("Error running command:", err)
