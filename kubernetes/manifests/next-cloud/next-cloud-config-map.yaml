@@ -1,0 +1,20 @@
+
+# 
+# Next Cloud Config Map
+# A config map is used to store key value pairs 
+# TODO: best practice would be to put the password in a secret, but because this is
+# local and not exposed to the internet it is okay for now
+# 
+# Define key value pairs for the next cloud postgres database
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-configmap
+  namespace: nextcloud-namespace
+data:
+  POSTGRES_PASSWORD: Test@123
+  POSTGRES_USER: db_user
+  POSTGRES_DB: next_cloud_db
+  POSTGRES_HOST: nextcloud-service
+

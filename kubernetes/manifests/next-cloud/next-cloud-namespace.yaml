@@ -1,0 +1,12 @@
+# 
+# Next Cloud Namespace
+# 
+# Define a namespace for all pods, deployments, services, pvc's and ingress's
+# so everything is consolodated into one name
+# 
+
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: nextcloud-namespace
+

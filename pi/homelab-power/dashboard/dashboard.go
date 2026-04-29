@@ -4,13 +4,11 @@ import (
 	"bytes"
 	"embed"
 	"fmt"
-	"html/template"
 	"net"
 	"net/http"
-	"os",
+	"os"
 	"os/exec"
 
-	"github.com/da-rod/wakeonlan"
 	"github.com/joho/godotenv"
 	"golang.org/x/crypto/ssh"
 )

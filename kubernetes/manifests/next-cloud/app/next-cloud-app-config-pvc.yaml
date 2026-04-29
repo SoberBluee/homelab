@@ -1,0 +1,20 @@
+# 
+# Next Cloud App - Persistent Volume Claims 
+# A persistent Volume claim is used for requesting storage from the cluster
+# 
+# We need a place to store the next cloud configuration files
+# It will request 5GB at minimum with read and write access
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bigkev-storage-config-pvc
+  namespace: nextcloud-namespace
+spec:
+  storageClassName: bigkev-storage
+  accessModes:
+    - ReadWriteOnce
+  #minimum amount of storage before putting a node on this storage
+  resources:
+    requests:
+      storage: 5Gi

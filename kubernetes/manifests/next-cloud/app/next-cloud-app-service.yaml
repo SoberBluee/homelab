@@ -1,0 +1,21 @@
+
+# 
+# Next Cloud App - Service
+# A service used used to expose a port for the deployment that next cloud is running on 
+# 
+# Give the service a cluster ip which will assign it a public ip address to access
+# Then Create a http port that exposes 80 and target the 80 port on the deployment
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud-app-svc
+  namespace: nextcloud-namespace
+spec:
+  type: ClusterIP
+  selector:
+    app: nextcloud-app 
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

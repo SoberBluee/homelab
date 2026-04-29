@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: 
+  name: nextcloud-postgres
+  namespace: nextcloud-namespace
+spec:
+  selector: 
+    matchLabels:
+      app: nextcloud-postgres
+  serviceName: "nextcloud-headless-service"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nextcloud-postgres
+    spec:
+      containers:
+      - name: nextcloud-postgres
+        image: postgres:14.2
+        envFrom:
+        - configMapRef:
+            name: postgres-configmap
+        ports:
+        - containerPort: 5432
+          name: postgres-port
+        volumeMounts:
+          - name: nextcloud-vct
+            mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: nextcloud-vct
+    spec:
+      accessModes: ['ReadWriteOnce']
+      storageClassName: bigkev-storage
+      resources:
+        requests:
+          storage: 20Gi
+

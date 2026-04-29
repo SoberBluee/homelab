@@ -1,0 +1,39 @@
+
+# 
+# Next Cloud Postgres Database Service
+# 
+# Created 2 services
+# Headless service specifically for StatefulSets so the control
+# can assign pods a DNS
+# 
+# A normal service that is used to expose the actual database to other
+# applications in the cluster
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud-headless-service
+  namespace: nextcloud-namespace
+spec:
+  clusterIP: None
+  selector:
+    app: nextcloud-postgres
+  ports:
+    - name: nextcloud-postgres
+      port: 5432
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud-service
+  namespace: nextcloud-namespace
+spec:
+  type: ClusterIP
+  selector:
+    app: nextcloud-postgres
+  ports: 
+    - name: nextcloud-postgres
+      port: 5432
+      targetPort: 5432

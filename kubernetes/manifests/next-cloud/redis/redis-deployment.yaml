@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: redis-deployment
+  namespace: nextcloud-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:alpine
+        ports:
+        - containerPort: 6379
+      resources:
+        limits:
+          cpu: "1"
+          memory: "200Mi"
+        requests:
+          cpu: "1"
+          memory: "100Mi"
+
