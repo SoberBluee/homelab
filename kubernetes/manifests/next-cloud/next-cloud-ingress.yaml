@@ -1,3 +1,15 @@
+
+# 
+# Next Cloud Ingress Controller
+# An ingress controller is used to expose the next cloud service outside of the cluster
+# 
+# Define a host name of nextcloud.local, which when accessed through 
+# the default path of /, will route traffic to the next cloud service on port 80
+# 
+# Then we also define a default path of / when accessed through the exposed ip E.G 192.168.1.100
+# This will route traffic to the next cloud service on port 80
+
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
