@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: joplin-postgres
+  namespace: joplin-namespace
+spec:
+  selector:
+    matchLabels:
+      app: joplin-postgres
+  serviceName: joplin-headless-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: joplin-postgres
+    spec:
+      securityContext:
+        fsGroup: 999
+      containers:
+      - name: joplin-postgres
+        image: postgres:18
+        env:
+        - name: POSTGRES_HOST_AUTH_METHOD
+          value: "trust"
+        envFrom:
+        - configMapRef:
+            name: joplin-config-map
+        ports:
+        - containerPort: 5432
+          name: joplin-port
+        volumeMounts:
+        - name: joplin-vct
+          mountPath: /var/lib/postgresql 
+  volumeClaimTemplates:
+  - metadata:
+      name: joplin-vct
+    spec:
+      accessModes: ['ReadWriteOnce']
+      storageClassName: bigkev-storage
+      resources:
+        requests:
+          storage: 5Gi

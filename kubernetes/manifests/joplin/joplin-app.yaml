@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joplin-app
+  namespace: joplin-namespace
+spec:
+  selector:
+    matchLabels:
+      app: joplin-app
+  template:
+    metadata:
+      labels:
+        app: joplin-app
+    spec:
+      containers:
+        - name: joplin-app
+          image: joplin/server:latest
+          ports:
+          - containerPort: 22300
+          envFrom:
+          - configMapRef:
+              name: joplin-config-map
+
+
