@@ -1,0 +1,13 @@
+
+{
+    "Version": "2026-05-16",
+    "Statement": [ 
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Principal": { 
+                "Service": "lambda.amazonaws.com"
+            }
+        }
+    ]
+}
