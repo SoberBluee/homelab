@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bigkev-storage-data-pvc
+  namespace: localstack-namespace
+spec:
+  storageClassName: bigkev-storage
+  accessModes:
+    - ReadWriteOnce
+  #minimum amount of storage before putting a node on this storage
+  resources:
+    requests:
+      storage: 50Gi

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: localstack-config-map
+  namespace: localstack-namespace
+data:
+  LOCALSTACK_AUTH_TOKEN: "ls-dUZi6073-ZIZe-fUja-PiLa-HUsedIyec51e"

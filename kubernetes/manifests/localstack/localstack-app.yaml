@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: localstack-app
+  namespace: localstack-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: localstack-app
+  template:
+    metadata:
+      labels:
+        app: localstack-app
+    spec:
+      containers:
+      - name: localstack-app
+        image: localstack/localstack
+        ports:
+        - containerPort: 4566
+        envFrom:
+        - configMapRef:
+            name: localstack-config-map
+        env:
+          - name: ENFORCE_IAM
+            value: "1"
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1

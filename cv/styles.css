@@ -1,0 +1,396 @@
+/* ── Edit these variables to retheme the CV ── */
+:root {
+  --cv-navy: #1b365d;
+  --cv-navy-dark: #152a4a;
+  --cv-text: #2d3436;
+  --cv-text-muted: #636e72;
+  --cv-line: #dfe6e9;
+  --cv-accent: #74b9ff;
+  --cv-bg: #ffffff;
+  --cv-font: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --cv-width: 860px;
+  --cv-gutter: 56px;
+  --cv-icon-size: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #ecf0f1;
+  font-family: var(--cv-font);
+  color: var(--cv-text);
+  font-size: 10.5pt;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cv {
+  width: var(--cv-width);
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--cv-bg);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Header ── */
+.cv-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  align-items: center;
+  min-height: 128px;
+  padding: 24px var(--cv-gutter) 24px 32px;
+  background: var(--cv-navy);
+  overflow: hidden;
+}
+
+.cv-header__triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 72px 72px 0 0;
+  border-color: var(--cv-navy-dark) transparent transparent transparent;
+  z-index: 1;
+}
+
+.cv-header__photo {
+  position: relative;
+  z-index: 3;
+  width: 118px;
+  height: 118px;
+  margin-left: 8px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  object-fit: cover;
+  object-position: center top;
+  background: #ddd;
+}
+
+.cv-header__identity {
+  position: relative;
+  z-index: 2;
+  padding-left: 12px;
+  color: #fff;
+}
+
+.cv-header__name {
+  margin: 0;
+  font-size: 24pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.cv-header__title {
+  margin: 6px 0 0;
+  font-size: 10pt;
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+/* ── Contact bar ── */
+.cv-contact {
+  text-align: center;
+  padding: 14px var(--cv-gutter) 10px;
+  font-size: 9.5pt;
+  color: var(--cv-text);
+  border-bottom: 1px solid var(--cv-line);
+}
+
+.cv-contact__phone {
+  background: rgba(116, 185, 255, 0.25);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.cv-contact a {
+  color: var(--cv-text);
+  text-decoration: underline;
+}
+
+.cv-contact__sep {
+  margin: 0 0.35em;
+  color: var(--cv-text-muted);
+}
+
+/* ── Main body padding ── */
+.cv-body {
+  padding: 16px var(--cv-gutter) 28px;
+}
+
+.cv-summary {
+  margin: 0 0 18px;
+  text-align: justify;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+/* ── Section layout (icon + title + rule) ── */
+.cv-section {
+  margin-bottom: 18px;
+}
+
+.cv-section__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.cv-section__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(27, 54, 93, 0.07);
+  color: var(--cv-navy);
+}
+
+.cv-icon {
+  width: var(--cv-icon-size);
+  height: var(--cv-icon-size);
+  display: block;
+  color: inherit;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cv-section__title {
+  margin: 0;
+  flex: 1;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--cv-navy);
+}
+
+.cv-section__link {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--cv-text-muted);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.cv-section__link:hover {
+  color: var(--cv-navy);
+}
+
+.cv-section__note {
+  margin: 0 0 10px;
+  font-size: 9.5pt;
+  font-style: italic;
+  color: var(--cv-text-muted);
+  line-height: 1.45;
+}
+
+.cv-freelance__project {
+  margin: 0 0 10px;
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+.cv-section__rule {
+  border: none;
+  border-top: 1px solid var(--cv-line);
+  margin: 0 0 12px;
+}
+
+/* ── Lists ── */
+.cv-list {
+  margin: 0;
+  padding-left: 1.15em;
+}
+
+.cv-list > li {
+  margin-bottom: 4px;
+}
+
+.cv-list--nested {
+  list-style-type: circle;
+  margin-top: 4px;
+}
+
+/* Skills: bold labels inline */
+.cv-skills strong {
+  font-weight: 700;
+}
+
+/* ── Certifications ── */
+.cv-cert {
+  margin-bottom: 10px;
+}
+
+.cv-cert:last-child {
+  margin-bottom: 0;
+}
+
+.cv-cert__title {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.cv-cert__meta {
+  margin: 0;
+  padding-left: 1.15em;
+  list-style: disc;
+  font-size: 9.5pt;
+  color: var(--cv-text);
+}
+
+/* ── Experience timeline ── */
+.cv-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.cv-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--cv-line);
+}
+
+/* Timeline continues on page 2 (Kitchen Porter) */
+.cv-timeline--continued::before {
+  top: 0;
+}
+
+.cv-job {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.cv-job:last-child {
+  margin-bottom: 0;
+}
+
+.cv-job::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cv-navy);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--cv-line);
+  z-index: 1;
+}
+
+.cv-job__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.cv-job__role {
+  margin: 0;
+  font-size: 10.5pt;
+  font-weight: 700;
+}
+
+.cv-job__dates {
+  margin: 0;
+  font-size: 10pt;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cv-job__org {
+  margin: 0 0 6px;
+  font-size: 10pt;
+  color: var(--cv-text-muted);
+}
+
+.cv-job__bullets {
+  margin: 0;
+  padding-left: 1.15em;
+}
+
+.cv-job__bullets li {
+  margin-bottom: 3px;
+}
+
+/* ── Education ── */
+.cv-edu {
+  margin-bottom: 12px;
+}
+
+.cv-edu:last-child {
+  margin-bottom: 0;
+}
+
+.cv-edu__school {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+/* ── Awards ── */
+.cv-awards {
+  margin: 0;
+  padding-left: 1.15em;
+}
+
+/* ── Footer ── */
+.cv-footer {
+  margin-top: 20px;
+  font-size: 9pt;
+  font-style: italic;
+  color: var(--cv-text-muted);
+}
+
+/* ── Print / page 2 ── */
+.cv-page-break {
+  page-break-before: always;
+  break-before: page;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: #fff;
+  }
+
+  .cv {
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .cv-section__icon {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

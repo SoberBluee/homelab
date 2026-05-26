@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethan Donovan — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <article class="cv">
+      <!-- ═══ PAGE 1 ═══ -->
+
+      <header class="cv-header">
+        <div class="cv-header__triangle" aria-hidden="true"></div>
+        <!-- Change src to swap your photo -->
+        <img
+          class="cv-header__photo"
+          src="assets/profile.png"
+          alt="Ethan Donovan"
+          width="118"
+          height="118"
+        />
+        <div class="cv-header__identity">
+          <h1 class="cv-header__name">ETHAN DONOVAN</h1>
+          <p class="cv-header__title">
+            Senior Full Stack Developer | PHP, Laravel &amp; Angular Expert
+          </p>
+        </div>
+      </header>
+
+      <div class="cv-contact">
+        <span class="cv-contact__phone">07494 026444</span>
+        <span class="cv-contact__sep">|</span>
+        <a href="mailto:ethandonovan111@hotmail.com">ethandonovan111@hotmail.com</a>
+        <br />
+        76 Greyson Way, Cwmbran, NP44 3GD
+        <span class="cv-contact__sep">|</span>
+        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="cv-contact__sep">|</span>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="cv-body">
+        <p class="cv-summary">
+          Dedicated and adaptable <strong>Full Stack Developer</strong> with proven
+          experience delivering efficient, scalable solutions across diverse projects.
+          <strong
+            >Skilled in Angular, Laravel, React Native, Docker, and CI/CD pipelines</strong
+          >, with a strong focus on optimizing system performance and reliability. Quick
+          learner and collaborative team player, committed to continuous growth and applying
+          best practices to solve complex challenges. Motivated by
+          <strong
+            >building robust applications that drive business value and improve user
+            experience.</strong
+          >
+        </p>
+
+        <!-- INFRASTRUCTURE PROJECTS -->
+        <section class="cv-section" aria-labelledby="infra-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <rect width="20" height="8" x="2" y="2" rx="2" />
+                <rect width="20" height="8" x="2" y="14" rx="2" />
+                <path d="M6 6h.01" />
+                <path d="M6 18h.01" />
+              </svg>
+            </span>
+            <h2 id="infra-heading" class="cv-section__title">INFRASTRUCTURE PROJECTS</h2>
+            <a
+              class="cv-section__link"
+              href="https://github.com/SoberBluee/homelab"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github.com/SoberBluee/homelab</a
+            >
+          </div>
+          <hr class="cv-section__rule" />
+          <ul class="cv-list">
+            <li>
+              <strong>Homelab platform (Proxmox):</strong> Designed and operate a segmented home lab
+              with VLAN-isolated workloads, Docker services, and a highly available Kubernetes cluster
+              (3 control plane / 2 worker nodes) behind firewall and VPN access.
+            </li>
+            <li>
+              <strong>Kubernetes workloads:</strong> Deployed and maintain production-style manifests
+              for self-hosted apps (e.g. Nextcloud, Joplin) including ingress, persistent storage,
+              Redis, and database services.
+            </li>
+            <li>
+              <strong>Infrastructure as Code:</strong> Provision and manage Proxmox VMs with Terraform,
+              validating connectivity, VM lifecycle, and repeatable environment setup.
+            </li>
+            <li>
+              <strong>CI/CD &amp; automation:</strong> Built deployment pipelines using GitHub webhooks
+              and Bash scripting to reduce manual releases and improve deployment consistency.
+            </li>
+            <li>
+              <strong>Network documentation:</strong> Modelled topology and service dependencies with
+              Python-based architecture diagrams for planning, troubleshooting, and onboarding.
+            </li>
+          </ul>
+        </section>
+
+        <!-- FREELANCING -->
+        <section class="cv-section" aria-labelledby="freelance-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+              </svg>
+            </span>
+            <h2 id="freelance-heading" class="cv-section__title">FREELANCING</h2>
+            <a
+              class="cv-section__link"
+              href="https://github.com/SoberBluee/project-x-web"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github.com/SoberBluee/project-x-web</a
+            >
+          </div>
+          <hr class="cv-section__rule" />
+          <p class="cv-section__note">
+            Delivered in personal time—before work, at lunch, and after work—on an
+            <strong>equity-only</strong> basis with no cash compensation.
+          </p>
+          <p class="cv-freelance__project">
+            <strong>Project X</strong> — AI-assisted SaaS platform for UK entrepreneurs (Angular,
+            Laravel, Stripe)
+          </p>
+          <ul class="cv-list">
+            <li>
+              Built and shipped a full-stack product from onboarding questionnaire through
+              authenticated dashboard, including <strong>Sanctum auth</strong>, membership tiers, and
+              <strong>Stripe</strong> billing with token-based usage for AI features.
+            </li>
+            <li>
+              Implemented <strong>AI-generated business and marketing plans</strong> with multi-step
+              wizards, multiple PDF templates, signed download links, and email notifications when
+              plans are ready.
+            </li>
+            <li>
+              Developed <strong>competitor analysis</strong> using queued background jobs, structured
+              report storage, and async delivery—enabling long-running OpenAI workloads without blocking
+              the UI.
+            </li>
+            <li>
+              Delivered <strong>invoicing and client management</strong>, plus <strong>social media
+              post generation</strong>, extending the platform beyond plan-building into day-to-day
+              business operations.
+            </li>
+            <li>
+              Published HMRC and business-structure guidance flows, company-name checks, and supporting
+              content to help founders navigate early-stage compliance and planning.
+            </li>
+            <li>
+              Deployed and maintained <strong>production and staging environments</strong> for the
+              Angular frontend and Laravel API, with rate limiting, PHPUnit coverage, and environment-specific
+              build pipelines.
+            </li>
+          </ul>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="cv-section" aria-labelledby="skills-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="m18 16 4-4-4-4" />
+                <path d="m6 8-4 4 4 4" />
+                <path d="M11 5 L13 19" />
+              </svg>
+            </span>
+            <h2 id="skills-heading" class="cv-section__title">SKILLS</h2>
+          </div>
+          <hr class="cv-section__rule" />
+          <ul class="cv-list cv-skills">
+            <li><strong>Languages:</strong> Python, Java, C#, JavaScript, PHP, Bash</li>
+            <li><strong>Frameworks:</strong> Angular, React Native, Laravel, Vue.JS</li>
+            <li>
+              <strong>Platforms &amp; Tools:</strong> Node.js, Expo, Docker, GitLab CI/CD, DigitalOcean, Kubernetes, Proxmox
+            </li>
+          </ul>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="cv-section" aria-labelledby="certs-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                <path d="M10 9H8" />
+                <path d="M16 13H8" />
+                <path d="M16 17H8" />
+              </svg>
+            </span>
+            <h2 id="certs-heading" class="cv-section__title">CERTIFICATIONS</h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">
+              Introduction to Containers w/ Docker, Kubernetes & OpenShift
+            </p>
+            <ul class="cv-cert__meta">
+              <li>Credential ID: 24B5ZOPEH11A</li>
+              <li>Credential URL: 
+                <a href="https://www.coursera.org/account/accomplishments/verify/24B5ZOPEH11A">
+                  https://www.coursera.org/account/accomplishments/verify/24B5ZOPEH11A
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">
+              Systems Design & Architecture Course - University of Alberta
+            </p>
+            <ul class="cv-cert__meta">
+              <li>Please view my linkedin Profile for proof of completion</li>
+  
+            </ul>
+          </div>
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">
+              Data Structures and Algorithms: Deep Dive Using Java, Udemy - May 2020 - May
+              2020
+            </p>
+            <ul class="cv-cert__meta">
+              <li>Credential ID: UC-68fd895b-49c9-4eb4-8d73-291264c5bb85</li>
+              <li>
+                Credential URL:
+                <a href="http://ude.my/UC-68fd895b-49c9-4eb4-8d73-291264c5bb85"
+                  >http://ude.my/UC-68fd895b-49c9-4eb4-8d73-291264c5bb85</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">
+              Machine Learning With Python, IBM - Jun 2020 - Jul 2020
+            </p>
+            <ul class="cv-cert__meta">
+              <li>Credential ID: B6FMKH4KKKNR</li>
+              <li>
+                Credential URL:
+                <a href="http://coursera.org/verify/B6FMKH4KKKNR"
+                  >http://coursera.org/verify/B6FMKH4KKKNR</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCES (spelling matches original CV) -->
+        <section class="cv-section" aria-labelledby="experience-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+            </span>
+            <h2 id="experience-heading" class="cv-section__title">
+              PROFFESIONAL EXPERIENCES
+            </h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-timeline">
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Senior Full Stack Engineer</h3>
+                <p class="cv-job__dates">August 2025 – Present</p>
+              </div>
+              <p class="cv-job__org">Cooper Rose Digital — Remote, Wales</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Lead project delivery, defect resolution, and new feature development across
+                  <strong>4 concurrent client engagements</strong>, balancing priorities and keeping
+                  releases on track.
+                </li>
+                <li>
+                  Built and maintain a <strong>multi-tenant codebase</strong>, separating client data
+                  and configuration while sharing core platform logic to scale delivery without
+                  one repo per client.
+                </li>
+                <li>
+                  Deliver new <strong>insurtech products</strong> and contribute to a
+                  <strong>fully modular platform</strong> that enables clients to self-configure and
+                  launch insurance products from initial requirements to go-live in
+                  <strong>weeks</strong>.
+                </li>
+                <li>
+                  Act as the <strong>primary technical lead</strong> following a team transition,
+                  restoring delivery capacity and driving a measurable improvement in
+                  <strong>productivity and profitability</strong>.
+                </li>
+                <li>
+                  Own <strong>client relationships</strong> day to day—scoping work, setting
+                  expectations, and aligning technical delivery with business goals.
+                </li>
+                <li>
+                  Implemented <strong>CI/CD pipelines</strong> using <strong>GitHub webhooks and
+                  Bash</strong>, automating deployments and reducing manual release overhead.
+                </li>
+              </ul>
+            </article>
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Full Stack Engineer</h3>
+                <p class="cv-job__dates">May 2022 – August 2025</p>
+              </div>
+              <p class="cv-job__org">Bluefuse — Bath, England</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Contributed to tax management tools (e.g., pooled payments, API
+                  integrations) in agile teams of 2–6 developers.
+                </li>
+                <li>
+                  Built and maintained 5+ full-stack apps with Angular, Laravel, React Native
+                  (MySQL/PostgreSQL), optimizing ag-grid tables for 2M+ rows via indexed
+                  joins, CTEs, and subqueries.
+                </li>
+                <li>
+                  Deployed and managed multi-env Linux servers on DigitalOcean/Kinsta;
+                  automated deployments via GitLab CI/CD.
+                </li>
+                <li>
+                  Migrated Endsleigh CMS from Prismic to Strapi, moving 10,000+
+                  documents/assets/blogs with custom scripts.
+                </li>
+                <li>
+                  Refactored React Native app and Laravel backend (Howden project), reduced
+                  crashes and optimized performance.
+                </li>
+              </ul>
+            </article>
+
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Web Development Trainee</h3>
+                <p class="cv-job__dates">June 2018 – July 2018</p>
+              </div>
+              <p class="cv-job__org">Educasoft — Prague</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Completed AngularJS-focused internship by building e-commerce shop with
+                  basket system.
+                </li>
+                <li>
+                  Demonstrated strong collaboration, problem-solving, and self-guided
+                  learning.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- ═══ PAGE 2 ═══ -->
+      <div class="cv-body cv-page-break">
+        <section class="cv-section" aria-labelledby="education-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.084a1 1 0 0 0 0 1.838l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+            </span>
+            <h2 id="education-heading" class="cv-section__title">ACADEMIC BACKGROUND</h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-edu">
+            <p class="cv-edu__school">
+              University of the West of England, Bristol - Sept 2019 – May 2022
+            </p>
+            <ul class="cv-list cv-list--nested">
+              <li>Bachelor of Computer Science (First Class Honours)</li>
+              <li>
+                Selected coursework: Artificial Intelligence, Data Structures &amp; Algorithms,
+                Object-Oriented Programming, Cryptography, Ethical &amp; Professional Issues in
+                Computing, Advanced Web Development
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-edu">
+            <p class="cv-edu__school">
+              South Gloucestershire and Stroud College, Bristol - Sept 2016 – Mar 2018
+            </p>
+            <ul class="cv-list cv-list--nested">
+              <li>BTEC ICT Level 3 Diploma (90 Credits) – DDD*</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="cv-section" aria-labelledby="awards-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
+                <circle cx="12" cy="8" r="6" />
+              </svg>
+            </span>
+            <h2 id="awards-heading" class="cv-section__title">AWARDS</h2>
+          </div>
+          <hr class="cv-section__rule" />
+          <ul class="cv-awards">
+            <li>
+              Awarded
+              <strong
+                >two certificates by the University of the West of England’s Pro-Vice
+                Chancellor &amp; Executive Dean</strong
+              >
+              for consistent high performance across all modules.
+            </li>
+          </ul>
+        </section>
+
+        <p class="cv-footer">
+          **** References and other personal information available upon request
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
