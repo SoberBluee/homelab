@@ -1,0 +1,41 @@
+# 1. The Data Volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-data-pv
+spec:
+  capacity:
+    storage: 500Gi
+  accessModes: ["ReadWriteMany"]
+  storageClassName: bigkev-storage
+  nfs:
+    server: 192.168.1.212
+    path: /mnt/pve/bigkev/nextcloud-namespace-bigkev-storage-data-pvc-pvc-5f54007b-3d78-474c-918f-aa63de23ce7c
+---
+# 2. The Config Volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-config-pv
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes: ["ReadWriteMany"]
+  storageClassName: bigkev-storage
+  nfs:
+    server: 192.168.1.65
+    path: /mnt/pve/bigkev/nextcloud-namespace-bigkev-storage-config-pvc-pvc-e4c78afa-3e46-4749-8acb-5d6c4e5a7b31
+---
+# 3. The Database Volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-db-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes: ["ReadWriteMany"]
+  storageClassName: bigkev-storage
+  nfs:
+    server: 192.168.1.65
+    path: /mnt/pve/bigkev/nextcloud-namespace-nextcloud-vct-nextcloud-postgres-0-pvc-b007b4bc-fd6c-4011-84cb-07c49319b17a
