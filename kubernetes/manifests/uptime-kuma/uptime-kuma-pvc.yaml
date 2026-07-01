@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: uptime-kuma-data-pvc
+  namespace: uptime-kuma-namespace
+spec:
+  storageClassName: bigkev-storage
+  volumeName: uptime-kuma-data-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

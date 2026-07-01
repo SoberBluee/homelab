@@ -9,7 +9,7 @@ spec:
   accessModes: ["ReadWriteMany"]
   storageClassName: bigkev-storage
   nfs:
-    server: 192.168.1.212
+    server: 192.168.1.65
     path: /mnt/pve/bigkev/nextcloud-namespace-bigkev-storage-data-pvc-pvc-5f54007b-3d78-474c-918f-aa63de23ce7c
 ---
 # 2. The Config Volume
