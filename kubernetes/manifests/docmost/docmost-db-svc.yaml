@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docmost-headless-service
+  namespace: docmost
+spec:
+  clusterIP: None
+  selector:
+    app: docmost-postgres
+  ports:
+    - name: docmost-postgres
+      port: 5432
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: docmost-db-service
+  namespace: docmost
+spec:
+  type: ClusterIP
+  selector:
+    app: docmost-postgres
+  ports:
+    - name: docmost-postgres
+      port: 5432
+      targetPort: 5432
+

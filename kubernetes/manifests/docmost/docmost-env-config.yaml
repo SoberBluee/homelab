@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: docmost-config
+  namespace: docmost
+data:
+  APP_URL: http://192.168.1.173:3000
+  APP_SECRET: "(0`%A>=da7i16'suPVX$7EA$ds[k(+Fo`*v£"
+  DATABASE_URL: 'postgresql://docmost:DocmostSecure2026@docmost-headless-service:5432/docmost'
+  REDIS_URL: 'redis://redis:6379'

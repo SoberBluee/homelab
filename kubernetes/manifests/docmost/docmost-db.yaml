@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: docmost-postgres
+  namespace: docmost
+spec:
+  selector:
+    matchLabels:
+      app: docmost-postgres
+  serviceName: "docmost-headless-service"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: docmost-postgres
+    spec:
+      containers:
+      - name: docmost-postgres
+        image: postgres:14.2
+        envFrom:
+        - configMapRef:
+            name: docmost-db-config
+        ports:
+        - containerPort: 5432
+          name: postgres-port
+        volumeMounts:
+          - name: docmost-vct
+            mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: docmost-vct
+    spec:
+      accessModes: ['ReadWriteOnce']
+      storageClassName: docmost-storage
+      resources:
+        requests:
+          storage: 10Gi

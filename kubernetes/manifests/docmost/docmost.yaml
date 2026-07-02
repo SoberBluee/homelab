@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docmost-app
+  namespace: docmost
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docmost-app
+  template:
+    metadata:
+      labels:
+        app: docmost-app
+    spec:
+      containers:
+      - name: docmost-app
+        image: docmost/docmost:latest
+        envFrom:
+        - configMapRef:
+            name: docmost-config
+        volumeMounts:
+        - name: docmost-data-pv
+          mountPath: /app/data/storage
+      volumes:
+      - name: docmost-data-pv
+        persistentVolumeClaim:
+          claimName: docmost-data-storage
