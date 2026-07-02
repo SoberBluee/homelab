@@ -61,13 +61,27 @@ resource "aws_instance" "app_server" {
   ami             = "ami-1234567890abcdef0" # Hardcoded dummy AMI for LocalStack
   instance_type   = var.ec2type
 
+  vpc_security_group_ids = [module.vpc.default_security_group_id]
+  subnet_id = module.vpc.private_subnets[0]
+
   tags = {
     Name = var.ec2name
   }
 }
 
-module "aws_vpn" { 
-  
+module "vpc" { 
+  # select module from the terraform module registry 
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.19.0"
+
+  name = "module-vpc"
+  cidr = "10.10.0.0/16"
+
+  azs             = ["eu-west-3a"]
+  private_subnets = ["10.10.1.0/24", "10.10.2.0/24"]
+  public_subnets  = ["10.10.101.0/24"]
+
+  enable_dns_hostnames    = true
 }
 
 
