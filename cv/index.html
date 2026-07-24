@@ -48,17 +48,11 @@
 
       <div class="cv-body">
         <p class="cv-summary">
-          Dedicated and adaptable <strong>Full Stack Developer</strong> with proven
-          experience delivering efficient, scalable solutions across diverse projects.
-          <strong
-            >Skilled in Angular, Laravel, React Native, Docker, and CI/CD pipelines</strong
-          >, with a strong focus on optimizing system performance and reliability. Quick
-          learner and collaborative team player, committed to continuous growth and applying
-          best practices to solve complex challenges. Motivated by
-          <strong
-            >building robust applications that drive business value and improve user
-            experience.</strong
-          >
+          <strong>Full Stack Developer</strong> who spends most of his time in
+          <strong>Angular, Laravel, React Native, Docker, and CI/CD</strong>. Comfortable
+          owning a feature end to end, digging into performance problems, and shipping
+          work that holds up in production. Happiest when the app is fast, reliable, and
+          actually useful to the people using it.
         </p>
 
         <!-- INFRASTRUCTURE PROJECTS -->
@@ -84,28 +78,177 @@
           <hr class="cv-section__rule" />
           <ul class="cv-list">
             <li>
-              <strong>Homelab platform (Proxmox):</strong> Designed and operate a segmented home lab
-              with VLAN-isolated workloads, Docker services, and a highly available Kubernetes cluster
-              (3 control plane / 2 worker nodes) behind firewall and VPN access.
+              <strong>Homelab platform (Proxmox):</strong> Run a segmented home lab with
+              VLAN-isolated workloads, Docker services, and a Kubernetes cluster
+              (3 control plane / 2 worker nodes) locked down behind a firewall and VPN.
             </li>
             <li>
-              <strong>Kubernetes workloads:</strong> Deployed and maintain production-style manifests
-              for self-hosted apps (e.g. Nextcloud, Joplin) including ingress, persistent storage,
-              Redis, and database services.
+              <strong>Kubernetes workloads:</strong> Keep production-style manifests for
+              self-hosted apps like Nextcloud and Joplin, covering ingress, persistent
+              storage, Redis, and databases.
             </li>
             <li>
-              <strong>Infrastructure as Code:</strong> Provision and manage Proxmox VMs with Terraform,
-              validating connectivity, VM lifecycle, and repeatable environment setup.
+              <strong>Infrastructure as Code:</strong> Spin up and manage Proxmox VMs with
+              Terraform so environments are repeatable rather than hand-built each time.
             </li>
             <li>
-              <strong>CI/CD &amp; automation:</strong> Built deployment pipelines using GitHub webhooks
-              and Bash scripting to reduce manual releases and improve deployment consistency.
+              <strong>CI/CD &amp; automation:</strong> Wired up deployment pipelines with
+              GitHub webhooks and Bash so releases are less manual and less error-prone.
             </li>
             <li>
-              <strong>Network documentation:</strong> Modelled topology and service dependencies with
-              Python-based architecture diagrams for planning, troubleshooting, and onboarding.
+              <strong>Network documentation:</strong> Drew the topology and service
+              dependencies with Python architecture diagrams, mainly so I can troubleshoot
+              faster and remember how everything connects.
             </li>
           </ul>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCES (spelling matches original CV) -->
+        <section class="cv-section" aria-labelledby="experience-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+            </span>
+            <h2 id="experience-heading" class="cv-section__title">
+              PROFESSIONAL EXPERIENCES
+            </h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-timeline">
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Senior Full Stack Engineer</h3>
+                <p class="cv-job__dates">August 2025 – Present</p>
+              </div>
+              <p class="cv-job__org">Cooper Rose Digital — Remote, Wales</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Own delivery across <strong>4 concurrent client projects</strong>: features,
+                  bugs, and release timing when everything wants attention at once.
+                </li>
+                <li>
+                  Built and maintain a <strong>multi-tenant codebase</strong> that keeps client
+                  data and environment config separate while still sharing the core platform.
+                </li>
+                <li>
+                  Ship new <strong>insurtech products</strong> on a
+                  <strong>modular platform</strong> where clients can configure and launch
+                  insurance products themselves, often going from requirements to live in
+                  <strong>weeks</strong>.
+                </li>
+                <li>
+                  Stepped in as the <strong>primary technical lead</strong> after a team
+                  change and got delivery moving again, with a clear lift in
+                  <strong>productivity and profitability</strong>.
+                </li>
+                <li>
+                  Handle <strong>day-to-day client contact</strong>: scope the work, set
+                  expectations, and keep technical decisions tied to what the business
+                  actually needs.
+                </li>
+                <li>
+                  Put <strong>CI/CD</strong> in place with <strong>GitHub webhooks and
+                  Bash</strong> so deployments are automated instead of a manual checklist.
+                </li>
+              </ul>
+            </article>
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Full Stack Engineer</h3>
+                <p class="cv-job__dates">May 2022 – August 2025</p>
+              </div>
+              <p class="cv-job__org">Bluefuse — Bath, England</p>
+              <ul class="cv-job__bullets">
+                <!-- 
+                    Tax lab integration, 
+                      3rd party application that allows for the transfer of partner and tax data                    
+                    Group optimizer 
+                      An algorithm that allows companies that are divided up into sub-divisions to reduce the overall 
+                      net interest the company has to pay to the IRD (Inland revenue departement). It looks at groups in the companies 
+                      that have paid a surplus of tax to offset the deficit that groups have under paid in to minimize the total amount of interest paid
+
+                    Advantage Group International
+                      A Company that acts as a middle man between suppliers (coca-cola) and retailers (ASDA) to collect information about business relationships. They 
+                      meassure performance, trust and reliability by conducting surveys with each company 
+
+                      The problem
+                      A user would upload a spread sheet from their surveying system into our aggrigation system (which would display, organise and filter the data) and these spreadhseets
+                      would have an insane row count (highest we saw was 2 million -/+) and we would need to quickly be able to filter through and aggrigate this data into the table and also be able 
+                      to produce charts and bar graphs
+
+                      The solution
+                      On the frontend to just display the data in tables, we would first paginate the data so that we wern't just loading in 2M+ rows in at once, at most we would pulling in 1000
+                      rows at a time so that initial loads times were quick
+
+                      The real challenge was to filter through the database because whenever you would filter, it would need to look through all those rows 
+                      We made sure to combine SQL techniques like properly indexing columns that were frequently used in subqueries like ID rows and commonly used rows like dates and names 
+                      Reducing string checking as this is very costly in sql. E.G we never used like %<string>%
+                      correctly using and ordering CTE's and subqueries to pull data quickly. For example, before we perform any joins or aggrigations. We would filter the 2M rows down 
+                      to a smaller subset of data, then perform actions on that data set.
+                      
+                    Howden / Endsleigh
+                        University insurance company for students 
+
+                        Did multiple website and mobile (react-native) redesigns for them 
+
+                        They had a content management system called prismic and because they were increasing their costs they wanted to migrate to a CMS called Strapi
+                        I created the UAT and production Linux servers on digital ocean with nginx configuration. I also built a script that transfered all this templates from prismic to strapi using 
+                        api calls
+
+                        We also had a bunch of performance issues with the web application that we had recently refactored. The app load times were pretty bad. 
+                        I used the react native / expo debug tool to reduce page load times from seconds to milliseconds (pretty much instantly).
+                        The problem was that in react native every 'view' you load in, which could be an element that is displaying on the page, or even elements that are being 
+                        rendered which are not even showing on the screen, will tank performance. And on one page there were over 700 views. I brought that down to only the essential elements
+
+                    
+                -->
+                <li>
+                  Worked on tax tools (pooled payments, third-party API integrations) in
+                  small agile teams of 2–6.
+                </li>
+                <li>
+                  Built and maintained 5+ full-stack apps in Angular, Laravel, and React
+                  Native (MySQL/PostgreSQL). Biggest pain point was ag-grid tables with
+                  2M+ rows; fixed it with indexing, CTEs, and filtering before joins.
+                </li>
+                <li>
+                  Ran Linux servers across staging and production on DigitalOcean and
+                  Kinsta, with deployments handled through GitLab CI/CD.
+                </li>
+                <li>
+                  Migrated Endsleigh from Prismic to Strapi, including 10,000+
+                  documents, assets, and blogs via custom transfer scripts.
+                </li>
+                <li>
+                  Refactored the Howden React Native app and Laravel backend; cut crashes
+                  and brought page loads down from seconds to near-instant by stripping
+                  unnecessary views.
+                </li>
+              </ul>
+            </article>
+
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Web Development Trainee</h3>
+                <p class="cv-job__dates">June 2018 – July 2018</p>
+              </div>
+              <p class="cv-job__org">Educasoft — Prague</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Built an e-commerce shop with a basket system as part of an AngularJS
+                  internship.
+                </li>
+                <li>
+                  Picked things up quickly and worked through problems independently when
+                  needed.
+                </li>
+              </ul>
+            </article>
+          </div>
         </section>
 
         <!-- FREELANCING -->
@@ -130,42 +273,43 @@
           </div>
           <hr class="cv-section__rule" />
           <p class="cv-section__note">
-            Delivered in personal time—before work, at lunch, and after work—on an
-            <strong>equity-only</strong> basis with no cash compensation.
+            Built in personal time (before work, at lunch, after work) on an
+            <strong>equity-only</strong> basis. No cash payment.
           </p>
           <p class="cv-freelance__project">
-            <strong>Project X</strong> — AI-assisted SaaS platform for UK entrepreneurs (Angular,
+            <strong>Project X</strong> — AI-assisted SaaS for UK entrepreneurs (Angular,
             Laravel, Stripe)
           </p>
+
+          
           <ul class="cv-list">
             <li>
-              Built and shipped a full-stack product from onboarding questionnaire through
-              authenticated dashboard, including <strong>Sanctum auth</strong>, membership tiers, and
-              <strong>Stripe</strong> billing with token-based usage for AI features.
+              Shipped the product from onboarding questionnaire to authenticated
+              dashboard: <strong>Sanctum auth</strong>, membership tiers, and
+              <strong>Stripe</strong> billing with token-based AI usage.
             </li>
             <li>
-              Implemented <strong>AI-generated business and marketing plans</strong> with multi-step
-              wizards, multiple PDF templates, signed download links, and email notifications when
-              plans are ready.
+              Added <strong>AI-generated business and marketing plans</strong> with
+              multi-step wizards, a few PDF templates, signed download links, and an
+              email when the plan is ready.
             </li>
             <li>
-              Developed <strong>competitor analysis</strong> using queued background jobs, structured
-              report storage, and async delivery—enabling long-running OpenAI workloads without blocking
-              the UI.
+              Built <strong>competitor analysis</strong> on queued jobs so long OpenAI
+              runs finish in the background instead of locking up the UI.
             </li>
             <li>
-              Delivered <strong>invoicing and client management</strong>, plus <strong>social media
-              post generation</strong>, extending the platform beyond plan-building into day-to-day
-              business operations.
+              Added <strong>invoicing, client management,</strong> and
+              <strong>social media post generation</strong> so the product covers more
+              than just writing plans.
             </li>
             <li>
-              Published HMRC and business-structure guidance flows, company-name checks, and supporting
-              content to help founders navigate early-stage compliance and planning.
+              Put together HMRC and business-structure guidance, company-name checks, and
+              related content for early-stage founders.
             </li>
             <li>
-              Deployed and maintained <strong>production and staging environments</strong> for the
-              Angular frontend and Laravel API, with rate limiting, PHPUnit coverage, and environment-specific
-              build pipelines.
+              Kept <strong>production and staging</strong> running for the Angular
+              frontend and Laravel API, with rate limiting, PHPUnit tests, and
+              environment-specific builds.
             </li>
           </ul>
         </section>
@@ -264,110 +408,7 @@
           </div>
         </section>
 
-        <!-- PROFESSIONAL EXPERIENCES (spelling matches original CV) -->
-        <section class="cv-section" aria-labelledby="experience-heading">
-          <div class="cv-section__head">
-            <span class="cv-section__icon" aria-hidden="true">
-              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                <rect width="20" height="14" x="2" y="6" rx="2" />
-              </svg>
-            </span>
-            <h2 id="experience-heading" class="cv-section__title">
-              PROFESSIONAL EXPERIENCES
-            </h2>
-          </div>
-          <hr class="cv-section__rule" />
 
-          <div class="cv-timeline">
-            <article class="cv-job">
-              <div class="cv-job__row">
-                <h3 class="cv-job__role">Senior Full Stack Engineer</h3>
-                <p class="cv-job__dates">August 2025 – Present</p>
-              </div>
-              <p class="cv-job__org">Cooper Rose Digital — Remote, Wales</p>
-              <ul class="cv-job__bullets">
-                <li>
-                  Lead project delivery, defect resolution, and new feature development across
-                  <strong>4 concurrent client engagements</strong>, balancing priorities and keeping
-                  releases on track.
-                </li>
-                <li>
-                  Built and maintain a <strong>multi-tenant codebase</strong>, separating client data
-                  and configuration while sharing core platform logic to scale delivery without
-                  one repo per client.
-                </li>
-                <li>
-                  Deliver new <strong>insurtech products</strong> and contribute to a
-                  <strong>fully modular platform</strong> that enables clients to self-configure and
-                  launch insurance products from initial requirements to go-live in
-                  <strong>weeks</strong>.
-                </li>
-                <li>
-                  Act as the <strong>primary technical lead</strong> following a team transition,
-                  restoring delivery capacity and driving a measurable improvement in
-                  <strong>productivity and profitability</strong>.
-                </li>
-                <li>
-                  Own <strong>client relationships</strong> day to day—scoping work, setting
-                  expectations, and aligning technical delivery with business goals.
-                </li>
-                <li>
-                  Implemented <strong>CI/CD pipelines</strong> using <strong>GitHub webhooks and
-                  Bash</strong>, automating deployments and reducing manual release overhead.
-                </li>
-              </ul>
-            </article>
-            <article class="cv-job">
-              <div class="cv-job__row">
-                <h3 class="cv-job__role">Full Stack Engineer</h3>
-                <p class="cv-job__dates">May 2022 – August 2025</p>
-              </div>
-              <p class="cv-job__org">Bluefuse — Bath, England</p>
-              <ul class="cv-job__bullets">
-                <li>
-                  Contributed to tax management tools (e.g., pooled payments, API
-                  integrations) in agile teams of 2–6 developers.
-                </li>
-                <li>
-                  Built and maintained 5+ full-stack apps with Angular, Laravel, React Native
-                  (MySQL/PostgreSQL), optimizing ag-grid tables for 2M+ rows via indexed
-                  joins, CTEs, and subqueries.
-                </li>
-                <li>
-                  Deployed and managed multi-env Linux servers on DigitalOcean/Kinsta;
-                  automated deployments via GitLab CI/CD.
-                </li>
-                <li>
-                  Migrated Endsleigh CMS from Prismic to Strapi, moving 10,000+
-                  documents/assets/blogs with custom scripts.
-                </li>
-                <li>
-                  Refactored React Native app and Laravel backend (Howden project), reduced
-                  crashes and optimized performance.
-                </li>
-              </ul>
-            </article>
-
-            <article class="cv-job">
-              <div class="cv-job__row">
-                <h3 class="cv-job__role">Web Development Trainee</h3>
-                <p class="cv-job__dates">June 2018 – July 2018</p>
-              </div>
-              <p class="cv-job__org">Educasoft — Prague</p>
-              <ul class="cv-job__bullets">
-                <li>
-                  Completed AngularJS-focused internship by building e-commerce shop with
-                  basket system.
-                </li>
-                <li>
-                  Demonstrated strong collaboration, problem-solving, and self-guided
-                  learning.
-                </li>
-              </ul>
-            </article>
-          </div>
-        </section>
       </div>
 
       <!-- ═══ PAGE 2 ═══ -->
@@ -422,12 +463,12 @@
           <hr class="cv-section__rule" />
           <ul class="cv-awards">
             <li>
-              Awarded
+              Received
               <strong
-                >two certificates by the University of the West of England’s Pro-Vice
+                >two certificates from the University of the West of England’s Pro-Vice
                 Chancellor &amp; Executive Dean</strong
               >
-              for consistent high performance across all modules.
+              for high performance across all modules.
             </li>
           </ul>
         </section>
