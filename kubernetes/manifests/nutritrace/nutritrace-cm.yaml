@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  DB_PATH: /mnt/pve/bigkev/nutritrace/database/database.db
-  UPLOADS_PATH: /mnt/pve/bigkev/nutritrace/uploads
+  DB_PATH: /database/database.db
+  UPLOADS_PATH: /uploads
 kind: ConfigMap
 metadata:
   name: nutritrace-cm

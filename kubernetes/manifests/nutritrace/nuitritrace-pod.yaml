@@ -14,9 +14,9 @@ spec:
         protocol: TCP
     volumeMounts:
       - name: nutritrace-vol
-        mountPath: /mnt/pve/bigkev/nutritrace/database
+        mountPath: /database
       - name: nutritrace-vol
-        mountPath: /mnt/pve/bigkev/nutritrace/uploads
+        mountPath: /uploads
     env:
       - name: DB_PATH
         valueFrom:
