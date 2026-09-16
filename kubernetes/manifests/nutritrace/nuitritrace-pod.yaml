@@ -28,6 +28,11 @@ spec:
           configMapKeyRef:
             name: nutritrace-cm
             key: UPLOADS_PATH
+      - name: JWT_SECRET
+        valueFrom:
+          configMapKeyRef:
+            name: nutritrace-cm
+            key: JWT_SECRET
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:

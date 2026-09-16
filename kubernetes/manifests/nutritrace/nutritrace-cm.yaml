@@ -2,6 +2,7 @@ apiVersion: v1
 data:
   DB_PATH: /database/database.db
   UPLOADS_PATH: /uploads
+  JWT_SECRET: 1j123jasd8asfAja0"09
 kind: ConfigMap
 metadata:
   name: nutritrace-cm
