@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nutritrace-ingress
+  namespace: nutritrace
+spec:
+  tls:
+  - hosts:
+      - track.lab
+    secretName: nutritrace-tls
+  rules:
+  - host: track.lab
+    http:
+      paths:
+      - backend:
+          service:
+            name: nutritrace-svc
+            port:
+              number: 3001
+        path: /
+        pathType: Exact
+status:
+  loadBalancer: {}

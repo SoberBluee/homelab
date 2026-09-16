@@ -6,7 +6,7 @@ metadata:
 spec: 
   storageClassName: bigkev-storage
   accessModes: 
-    - ReadWriteMany # <--- Changed to match the PV
+    - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
