@@ -19,11 +19,15 @@ spec:
         mountPath: /uploads
     env:
       - name: DB_PATH
-        configMapKeyRef:
-          name: nutritrace-cm
+        valueFrom:
+          configMapKeyRef:
+            name: nutritrace-cm
+            key: DB_PATH
       - name: UPLOADS_PATH
-        configMapKeyRef:
-          name: nutritrace-cm
+        valueFrom:
+          configMapKeyRef:
+            name: nutritrace-cm
+            key: UPLOADS_PATH
   volumes:
   - name: database
     nfs:
