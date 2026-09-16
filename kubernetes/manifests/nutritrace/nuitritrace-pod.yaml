@@ -13,10 +13,10 @@ spec:
       - containerPort: 3001
         protocol: TCP
     volumeMounts:
-      - name: database
-        mountPath: /db
-      - name: uploads
-        mountPath: /uploads
+      - name: nutritrace-vol
+        mountPath: /mnt/pve/bigkev/nutritrace/database
+      - name: nutritrace-vol
+        mountPath: /mnt/pve/bigkev/nutritrace/uploads
     env:
       - name: DB_PATH
         valueFrom:
@@ -38,14 +38,10 @@ spec:
             values:
             - worker-4
   volumes:
-  - name: database
+  - name: nutritrace-vol
     nfs:
       server: 192.168.1.65
-      path: /mnt/pve/bigkev/nutritrace/database
-  - name: uploads
-    nfs:
-      server: 192.168.1.65
-      path: /mnt/pve/bigkev/nutritrace/uploads
+      path: /mnt/pve/bigkev/nutritrace
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
