@@ -34,7 +34,7 @@ spec:
         nodeSelectorTerms:
         - matchExpressions:
           - key: kubernetes.io/hostname
-            operator: In
+            operator: NotIn
             values:
             - worker-4
   volumes:
