@@ -28,6 +28,18 @@ spec:
           configMapKeyRef:
             name: nutritrace-cm
             key: UPLOADS_PATH
+  affinity:
+    podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - worker-4
+            topologyKey: topology.kubernetes.io/zone
   volumes:
   - name: database
     nfs:
