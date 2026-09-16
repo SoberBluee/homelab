@@ -4,5 +4,5 @@ data:
   UPLOADS_PATH: /mnt/pve/bigkev/nutritrace/uploads
 kind: ConfigMap
 metadata:
-  name: nutritrace
+  name: nutritrace-cm
   namespace: nutritrace
