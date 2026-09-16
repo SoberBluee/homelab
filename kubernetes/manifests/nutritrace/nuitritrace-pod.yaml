@@ -7,7 +7,7 @@ metadata:
   namespace: nutritrace
 spec:
   containers:
-  - image: ghcr.io/traceapps/nutritrace:latest
+  - image: traceapps/nutritrace:latest
     name: nutritrace-pod
     ports:
       - containerPort: 3001
