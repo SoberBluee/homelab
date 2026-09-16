@@ -4,6 +4,7 @@ metadata:
   name: nutritrace-ingress
   namespace: nutritrace
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
       - track.lab
