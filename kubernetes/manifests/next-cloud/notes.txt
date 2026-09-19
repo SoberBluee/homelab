@@ -1,0 +1,44 @@
+Thoughts
+
+Nextcloud is a 3 tier app (the app, postgres and redis) so unlike nutritrace
+I could not just deny all ingress and egress on everything. The app has to talk
+to the database on 5432 and redis on 6379 and it also has to be able to resolve
+DNS otherwise it cannot find those services. Postgres and redis do not need to
+talk out to anything else so those two I have locked down with deny all egress
+and no DNS, and they only accept ingress from the nextcloud app.
+
+When writing the network policies I had to select the pods with the labels that
+are actually on the pod template, not the name of the deployment. Redis is a good
+example of this because the deployment is called redis-deployment but the pods
+are labelled app: redis. If you select the wrong label the policy does nothing.
+
+Issue 1
+after I applied the network policies I could no longer access the webpage through
+the normal means (I.E the NodePort service nextcloud-app-svc and then
+http://<node-ip>:30002 or nextcloud.lab through nginx)
+
+The reason this was happening was because the app network policy had Ingress in
+policyTypes but no valid ingress rule. That is a deny all inbound, so traffic from
+the service never reached the pod even though the service itself was fine.
+
+I first tried to punch a hole like this
+
+  ingress:
+  - from:
+    ports:
+    - protocol: TCP
+      port: 80
+
+which did not work. from and ports have to be siblings on the same rule. Nesting
+ports under from is not a valid "allow port 80" rule. I also did not need an
+ipBlock for this, the service is just forwarding packets to the pod.
+
+Solution
+allow TCP 80 on the nextcloud app and omit from entirely so any source can hit
+that port (the NodePort / nginx in front of it). That is enough for the webpage
+to come back. Postgres and redis stay locked to only the app.
+
+  ingress:
+  - ports:
+    - protocol: TCP
+      port: 80
