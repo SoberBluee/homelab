@@ -3,6 +3,8 @@ kind: StatefulSet
 metadata: 
   name: nextcloud-postgres
   namespace: nextcloud-namespace
+  labels:
+    app: nextcloud-postgres
 spec:
   selector: 
     matchLabels:

@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: next-cloud-db-np
+  namespace: nextcloud-namespace
+spec:
+  podSelector:
+    matchLabels:
+      app: nextcloud-postgres
+  policyTypes:
+  - Ingress
+  - Egress
+  # only allow ingress traffic from the nextcloud app
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: nextcloud-app
+    ports:
+    - protocol: TCP
+      port: 5432
+  # I don't think the database needs to be able to resolve DNS
+  # - to: 
+  #   - namespaceSelector:
+  #       matchLabels:
+  #         kubernetes.io/metadata.name: kube-system
+  #     podSelector:
+  #       matchLabels:
+  #         k8s-app: kube-dns
+  #   ports:
+  #   - protocol: TCP
+  #     port: 53
+  #   - protocol: UDP
+  #     port: 53
+  #   - protocol: TCP
+  #     port: 9153

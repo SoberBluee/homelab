@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: next-cloud-app-np
+  namespace: nextcloud-namespace
+spec:
+  podSelector:
+    matchLabels:
+      app: nextcloud-app
+  policyTypes:
+  - Ingress
+  - Egress
+  # Deny all ingress as there is nothing that needs to comminucate with the application
+  egress:
+  # allow nextcloud app to talk to database
+  - to:
+    - podSelector:
+        matchLabels:
+          app: nextcloud-postgres
+    ports:
+    - protocol: TCP
+      port: 5432
+  # allow nextcloud app to talk to redis
+  - to:
+    - podSelector:
+        matchLabels:
+          app: redis-deployment
+    ports:
+    - protocol: TCP
+      port: 6379
+  #  allow nextcloud app to resolve dns
+  - to: 
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: kube-system
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
+    - protocol: TCP
+      port: 9153

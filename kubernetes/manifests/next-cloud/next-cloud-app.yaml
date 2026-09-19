@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: nextcloud-app
   namespace: nextcloud-namespace
+  labels:
+    app: nextcloud-app
 spec:
   replicas: 1
   selector:

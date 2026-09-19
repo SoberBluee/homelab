@@ -1,0 +1,34 @@
+Thoughts 
+
+When deploying this add I realised that the docker image only takes a 
+sqlite db file so there would be no need for a statefulset and because 
+its a single file there was no need to create a deployment as if we 
+pointed the deployment at a global volume mount where the database file 
+each pod would lock the file while accessing or updating it
+
+Issue 1
+when I started the application I could not access it through the normal
+means (I.E creating a NodePort service and then access the pod through 
+http://<node-ip>:30004)
+
+The reason this was happening was because the application sets the 
+Secure flag on authentication cookies. So the login request would work
+and return a 200 response however on every subsequent request like /history
+it would return a 401. The reason for this is because browsers would will not send
+Secure cookies over http, and need to be sent over https
+
+Solution 
+I have a PIHole which I use as a DNS Sinkhole for all devices on my network, on the 
+pi hole I have a list of local Dns Records that point to my Nginx Reverse proxy 
+VM on my homelab. On this VM i have a track.lab (domain for nutritrace) config which for 
+all traffic on port 443 (https) it will redirect it to a list of ip addresses with ports.
+In this config I also had to create a path to self signed SSL certificates in /etc/nginx/ssl/track.lab
+I created these certificates with -  
+
+openssl req -x509 -days 365 -nodes -newkey rsa:2048 --keyout=/etc/nginx/ssl/track.lab/track.lab.key --out=/etc/nginx/ssl/track.lab/track.lab.crt -subj="/CN=track.lab"
+
+
+As this pod has no external dependencies (database, cache db) I have created a deny all ingress
+and engress traffic. This significantly increases security as if the pod is compromised, there is no 
+possible way the attacker can attack other parts of the network
+

@@ -3,6 +3,8 @@ kind: Deployment
 metadata: 
   name: redis-deployment
   namespace: nextcloud-namespace
+  labels:
+    app: redis-deployment
 spec:
   replicas: 1
   selector:
