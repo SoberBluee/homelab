@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethan Donovan — Cloud / DevOps CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <article class="cv">
+      <header class="cv-header">
+        <div class="cv-header__triangle" aria-hidden="true"></div>
+        <img
+          class="cv-header__photo"
+          src="assets/profile.png"
+          alt="Ethan Donovan"
+          width="118"
+          height="118"
+        />
+        <div class="cv-header__identity">
+          <h1 class="cv-header__name">ETHAN DONOVAN</h1>
+          <p class="cv-header__title">
+            Cloud / Devops Engineer | Kubernetes, Ci/Cd &amp; Linux
+          </p>
+        </div>
+      </header>
+
+      <div class="cv-contact">
+        <span>Cwmbran, Wales, UK</span>
+        <span class="cv-contact__sep">|</span>
+        <span class="cv-contact__phone">07494 026444</span>
+        <span class="cv-contact__sep">|</span>
+        <a href="mailto:ethandonovan111@hotmail.com">ethandonovan111@hotmail.com</a>
+        <span class="cv-contact__sep">|</span>
+        <a href="https://github.com/SoberBluee/homelab" target="_blank" rel="noopener"
+          >Homelab repository</a
+        >
+      </div>
+
+      <div class="cv-body">
+        <p class="cv-summary">
+          Software engineer with commercial experience maintaining Linux-hosted
+          applications and delivery pipelines, now targeting Cloud / DevOps and
+          infrastructure-focused roles. Certified Kubernetes Administrator (CKA), with
+          hands-on experience building a Proxmox and Kubernetes homelab, provisioning
+          virtual machines with Terraform, automating application tests and deployments,
+          and monitoring self-hosted workloads with Prometheus, Grafana and Loki. Brings
+          an application engineer’s understanding of APIs, databases, caching and
+          troubleshooting, alongside practical infrastructure automation.
+        </p>
+
+        <section class="cv-section" aria-labelledby="skills-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="m18 16 4-4-4-4" />
+                <path d="m6 8-4 4 4 4" />
+                <path d="M11 5 L13 19" />
+              </svg>
+            </span>
+            <h2 id="skills-heading" class="cv-section__title">TECHNICAL SKILLS</h2>
+          </div>
+          <hr class="cv-section__rule" />
+          <ul class="cv-list cv-skills">
+            <li>
+              <strong>Containers and orchestration:</strong> Kubernetes (CKA), Docker,
+              Kubernetes workloads, ingress, persistent storage, Redis, MySQL and
+              PostgreSQL
+            </li>
+            <li>
+              <strong>CI/CD and automation:</strong> GitHub Actions, GitLab CI/CD, GitHub
+              webhooks, Bash deployment automation, Terraform for Proxmox VM provisioning
+            </li>
+            <li>
+              <strong>Monitoring and logs:</strong> Prometheus metrics, Grafana dashboards,
+              Loki-based application log aggregation, CPU and memory monitoring
+            </li>
+            <li>
+              <strong>Linux and networking:</strong> Linux, Nginx, DigitalOcean, Kinsta,
+              Proxmox, VLAN segmentation, firewall and VPN controls
+            </li>
+            <li>
+              <strong>Scripting and applications:</strong> Bash, Python, PHP, Laravel,
+              Next.js, MySQL, Redis and REST APIs
+            </li>
+          </ul>
+        </section>
+
+        <section class="cv-section" aria-labelledby="experience-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+            </span>
+            <h2 id="experience-heading" class="cv-section__title">
+              PROFESSIONAL EXPERIENCE
+            </h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-timeline">
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Senior Full Stack Engineer</h3>
+                <p class="cv-job__dates">Aug 2025 – Present</p>
+              </div>
+              <p class="cv-job__org">Cooper Rose Digital — Remote, Wales</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Implemented GitHub Actions workflows to automate Laravel API testing and
+                  automatic deployments, replacing manual steps with a repeatable release
+                  process.
+                </li>
+                <li>
+                  Coordinate feature delivery, bug fixes and release timing across four
+                  concurrent client projects, balancing change requests with delivery
+                  commitments.
+                </li>
+                <li>
+                  Maintain a multi-tenant application platform with separate client data
+                  and environment configuration, requiring care around release and
+                  configuration changes.
+                </li>
+                <li>
+                  Took on primary technical lead duties following a team change and worked
+                  directly with clients to scope requirements, set expectations and resolve
+                  technical priorities.
+                </li>
+              </ul>
+            </article>
+
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Full Stack Engineer</h3>
+                <p class="cv-job__dates">May 2022 – Aug 2025</p>
+              </div>
+              <p class="cv-job__org">Bluefuse — Bath, England</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Maintained Linux staging and production environments on DigitalOcean and
+                  Kinsta, with deployments handled through GitLab CI/CD.
+                </li>
+                <li>
+                  Configured Linux hosting and Nginx for staging and production
+                  environments, including infrastructure supporting a CMS migration.
+                </li>
+                <li>
+                  Wrote custom scripts and API-based transfer tooling to migrate more than
+                  10,000 documents, assets and blog entries from Prismic to Strapi.
+                </li>
+                <li>
+                  Investigated performance issues across applications and databases,
+                  including SQL optimisation for ag-grid workflows over datasets exceeding
+                  two million rows.
+                </li>
+                <li>
+                  Built and maintained Angular, Laravel and React Native applications,
+                  developing an understanding of how application changes interact with
+                  deployment and runtime environments.
+                </li>
+              </ul>
+            </article>
+
+            <article class="cv-job">
+              <div class="cv-job__row">
+                <h3 class="cv-job__role">Web Development Trainee</h3>
+                <p class="cv-job__dates">Jun 2018 – Jul 2018</p>
+              </div>
+              <p class="cv-job__org">Educasoft — Prague</p>
+              <ul class="cv-job__bullets">
+                <li>
+                  Built an e-commerce shop with a basket system during an AngularJS
+                  internship.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="cv-section" aria-labelledby="projects-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <rect width="20" height="8" x="2" y="2" rx="2" />
+                <rect width="20" height="8" x="2" y="14" rx="2" />
+                <path d="M6 6h.01" />
+                <path d="M6 18h.01" />
+              </svg>
+            </span>
+            <h2 id="projects-heading" class="cv-section__title">SELECTED PROJECTS</h2>
+            <a
+              class="cv-section__link"
+              href="https://github.com/SoberBluee/homelab"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github.com/SoberBluee/homelab</a
+            >
+          </div>
+          <hr class="cv-section__rule" />
+
+          <p class="cv-freelance__project">
+            <strong>Homelab infrastructure platform</strong> — Personal project
+          </p>
+          <ul class="cv-list">
+            <li>
+              Run a Proxmox-based homelab with VLAN-isolated workloads, firewall and VPN
+              controls, Docker services, and a Kubernetes cluster with three control-plane
+              nodes and two worker nodes.
+            </li>
+            <li>
+              Use Terraform to provision and manage Proxmox virtual machines so
+              environments can be recreated consistently rather than assembled manually.
+            </li>
+            <li>
+              Operate self-hosted Kubernetes workloads with ingress, persistent storage,
+              databases and Redis. The environment includes Nextcloud, a meal-planning app
+              and a diet-tracking app.
+            </li>
+            <li>
+              Monitor homelab workloads with Prometheus and Grafana, tracking CPU and
+              memory usage across Nextcloud, Meal Planner and the diet-tracking
+              application.
+            </li>
+            <li>
+              Configured a Loki logging sidecar with a shared volume to collect Meal
+              Planner application logs, making them available to query and aggregate in
+              Grafana.
+            </li>
+            <li>
+              Use GitHub webhooks and Bash for deployment automation, and Python-generated
+              architecture diagrams to document network topology and service dependencies.
+            </li>
+          </ul>
+
+          <p class="cv-freelance__project">
+            <strong>Meal-planning application</strong> — Personal project
+          </p>
+          <ul class="cv-list">
+            <li>
+              Built and host a Next.js frontend and API on the homelab Kubernetes cluster,
+              backed by MySQL with Redis request caching in the API.
+            </li>
+            <li>
+              Connect application deployment, database and cache services with the wider
+              self-hosted monitoring and logging setup.
+            </li>
+          </ul>
+
+          <p class="cv-section__note">
+            Built in personal time on an <strong>equity-only</strong> basis. No cash
+            payment.
+          </p>
+          <p class="cv-freelance__project">
+            <strong>Project X</strong> — Equity-only SaaS contribution
+          </p>
+          <ul class="cv-list">
+            <li>
+              Maintained staging and production environments for an Angular frontend and
+              Laravel API, with rate limiting, PHPUnit tests and environment-specific
+              builds.
+            </li>
+            <li>
+              Implemented Laravel queues for long-running AI competitor-analysis requests,
+              alongside API, billing and notification integrations.
+            </li>
+          </ul>
+        </section>
+
+        <section class="cv-section" aria-labelledby="education-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.084a1 1 0 0 0 0 1.838l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+            </span>
+            <h2 id="education-heading" class="cv-section__title">EDUCATION</h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-edu">
+            <p class="cv-edu__school">
+              University of the West of England, Bristol - Sep 2019 – May 2022
+            </p>
+            <ul class="cv-list cv-list--nested">
+              <li>BSc Computer Science (First Class Honours)</li>
+            </ul>
+          </div>
+
+          <div class="cv-edu">
+            <p class="cv-edu__school">
+              South Gloucestershire and Stroud College, Bristol - Sep 2016 – Mar 2018
+            </p>
+            <ul class="cv-list cv-list--nested">
+              <li>BTEC ICT Level 3 Diploma (90 credits) – DDD*</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="cv-section" aria-labelledby="certs-heading">
+          <div class="cv-section__head">
+            <span class="cv-section__icon" aria-hidden="true">
+              <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                <path d="M10 9H8" />
+                <path d="M16 13H8" />
+                <path d="M16 17H8" />
+              </svg>
+            </span>
+            <h2 id="certs-heading" class="cv-section__title">CERTIFICATIONS AND COURSES</h2>
+          </div>
+          <hr class="cv-section__rule" />
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">Certified Kubernetes Administrator (CKA)</p>
+          </div>
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">
+              Introduction to Containers with Docker, Kubernetes and OpenShift — Coursera
+            </p>
+            <ul class="cv-cert__meta">
+              <li>Credential: 24B5ZOPEH11A</li>
+              <li>
+                Credential URL:
+                <a href="https://www.coursera.org/account/accomplishments/verify/24B5ZOPEH11A"
+                  >https://www.coursera.org/account/accomplishments/verify/24B5ZOPEH11A</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-cert">
+            <p class="cv-cert__title">
+              Systems Design and Architecture Course — University of Alberta
+            </p>
+          </div>
+        </section>
+      </div>
+    </article>
+  </body>
+</html>

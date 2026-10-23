@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mealplanner-alloy-sidecar
+  namespace: mealplanner
+data:
+  alloy-sidecar.yaml: |
+    local.file_match "tmplogs" {
+      path_targets = [{"__path__" = "/var/log/mealplanner/*.log"}]
+    }
+
+    loki.source.file "local_files" {
+        targets    = local.file_match.tmplogs.targets
+        forward_to = [loki.write.local_loki.receiver]
+    }
+
+    loki.write "local_loki" {
+        endpoint {
+            url = "http://loki-gateway.default.svc.cluster.local/loki/api/v1/push"
+            tenant_id = "1"
+        }
+    }
